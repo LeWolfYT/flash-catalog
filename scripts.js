@@ -25,7 +25,7 @@ ok();
 
 const play = document.querySelector('#play');
 const game = document.querySelector('#game');
-var swfobject = {};
+var swfobject = {ua: {pv: {}}, hasFlashPlayerVersion() { return true }};
 
 window.RufflePlayer = window.RufflePlayer || {};
         window.addEventListener("load", (event) => {
