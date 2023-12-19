@@ -23,6 +23,7 @@ for (let i=pjs.length; i > -1; i--) {
 setInterval(ok, pjs.length()*1000);
 ok();
 
+function setupRuffle() {
 const play = document.querySelector('#play');
 const game = document.querySelector('#game');
 var swfobject = {ua: {pv: {}}, hasFlashPlayerVersion() { return true }};
@@ -43,4 +44,5 @@ play.onclick = (event) => {
                 url: "lewolfyt.github.io/flash-catalog/" + game.value, 
                 backgroundColor: "#000", 
              });
+}
 }
