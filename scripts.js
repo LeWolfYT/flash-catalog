@@ -27,13 +27,20 @@ const play = document.querySelector('#play');
 const game = document.querySelector('#game');
 var swfobject = {};
 
-swfobject.embedSWF = function(url, cont, width, height){
-    var ruffle = window.RufflePlayer.newest(),
-        player = Object.assign(document.getElementById(cont).appendChild(ruffle.createPlayer()), {
-            width: width,
-            height: height,
-            style: 'width: ' + width + 'px; height: ' + height + 'px',
+window.RufflePlayer = window.RufflePlayer || {};
+        window.addEventListener("load", (event) => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            const container = document.getElementById("container"); 
+            container.appendChild(player);
+            
+            player.style.width = "800px"; 
+            player.style.height = "600px";
         });
+
 play.onclick = (event) => {
-  swfobject.embedSWF({url: "lewolfyt.github.io/flash-catalog/games/" + game.value})
+  player.load({
+                url: "lewolfyt.github.io/flash-catalog/" + game.value, 
+                backgroundColor: "#000", 
+             });
 }
