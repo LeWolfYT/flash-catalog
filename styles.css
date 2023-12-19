@@ -25,20 +25,20 @@ h3 {
 p {
   font-fanily: "VCRMono", sans-serif;
   color: white;
-}
+};
 
 .fx {
   position: sticky;
   width: 100%;
-}
+};
 
 .nfx {
   position: static;
   top: 50px;
   width: 100%;
-}
+};
 
 .eggo {
   width: 50%;
   margin: auto;
-}
+};
