@@ -22,3 +22,18 @@ for (let i=pjs.length; i > -1; i--) {
 }
 setInterval(ok, pjs.length()*1000);
 ok();
+
+const play = document.querySelector('#play');
+const game = document.querySelector('#game');
+var swfobject = {};
+
+swfobject.embedSWF = function(url, cont, width, height){
+    var ruffle = window.RufflePlayer.newest(),
+        player = Object.assign(document.getElementById(cont).appendChild(ruffle.createPlayer()), {
+            width: width,
+            height: height,
+            style: 'width: ' + width + 'px; height: ' + height + 'px',
+        });
+play.onclick = (event) => {
+  swfobject.embedSWF({url: "lewolfyt.github.io/flash-catalog/games/" + game.value})
+}
