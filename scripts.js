@@ -4,7 +4,7 @@ function sleep(ms) {
 
 document.title = "\u200E";
 async function ok() {
-var pjs = "PJ\'S ROOM!"
+var pjs = "Flash games!"
 var tx = ""
 for (let i=0; i < pjs.length; i++) {
   tx += pjs[i]
