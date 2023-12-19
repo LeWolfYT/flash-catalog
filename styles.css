@@ -1,44 +1,44 @@
 html {
   background-color: black;
-};
+}
 
 @font-face {
   font-family: "VCRMono";
   src: url("https://github.com/LeWolfYT/LeWolfYT.github.io/blob/69813c59386b17861cfef83257c46eba7dbddef3/VCR_OSD_MONO.woff")
-};
+}
 
 h1 {
   font-fanily: "VCRMono", sans-serif;
   color: white;
-};
+}
 
 h2 {
   font-fanily: "VCRMono", sans-serif;
   color: white;
-};
+}
 
 h3 {
   font-fanily: "VCRMono", sans-serif;
   color: white;
-};
+}
 
 p {
   font-fanily: "VCRMono", sans-serif;
   color: white;
-};
+}
 
 .fx {
   position: sticky;
   width: 100%;
-};
+}
 
 .nfx {
   position: static;
   top: 50px;
   width: 100%;
-};
+}
 
 .eggo {
   width: 50%;
   margin: auto;
-};
+}
