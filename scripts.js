@@ -21,6 +21,13 @@ for (let i=pjs.length; i > -1; i--) {
 }
 }
 setInterval(ok, pjs.length()*1000);
+var swfobject = {};
+
+
+const play = document.querySelector('#play');
+const game = document.querySelector('#game');
+
+play.onclick = (event) => {
+  swfobject.embedSWF("lewolfyt.github.io/flash-catalog/games/"+game.value, "ruffle", 800, 600)
+}
 ok();
-
-
