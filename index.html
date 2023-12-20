@@ -16,8 +16,15 @@
       <option value="level3.swf">This Is The Only Level 3</option>
     </select>
     <button id="play">Play!</button><div id='ruffle' class="gameloc"></div>
-    
-<script src='https://maddox05.github.io/ruffle-example/ruffle/index.js'></script>
+    <script id="gabe">var swfobject = {};
+
+
+const play = document.querySelector('#play');
+const game = document.querySelector('#game');
+
+play.onclick = (event) => {
+  swfobject.embedSWF("lewolfyt.github.io/flash-catalog/games/"+game.value, "ruffle", 800, 600)
+}</script>
     </body>
 
 </html>
