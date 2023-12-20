@@ -24,10 +24,7 @@ setInterval(ok, pjs.length()*1000);
 var swfobject = {};
 
 
-const play = document.querySelector('#play');
-const game = document.querySelector('#game');
-
-play.onclick = (event) => {
-  swfobject.embedSWF("lewolfyt.github.io/flash-catalog/games/"+game.value, "ruffle", 800, 600)
+var play = document.querySelector('#play');
+var game = document.querySelector('#game');
 }
 ok();
