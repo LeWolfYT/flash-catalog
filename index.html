@@ -18,7 +18,7 @@
     <button id="play">Play!</button><div id='ruffle' class="gameloc"></div>
     <script id="gabe">
 play.onclick = (event) => {
-  swfobject.embedSWF("lewolfyt.github.io/flash-catalog/games/"+game.value, "ruffle", 800, 600)
+  window.top.location = "lewolfyt.github.io/flash-catalog/game.html?game=" + game.value;
 }</script>
     </body>
 
