@@ -9,7 +9,10 @@
     <img src="https://fontmeme.com/permalink/231219/1b410b47d57f13306d542f94e9dc45a3.png">
 
       <p style="color:white;">Suggest games in person!</p>
-    <label for="game" style="color:white;">Choose a game!</label>
+    <div class="content resizable draggable-window" data-window-name="Step right up!">
+      <h1 class="titlebar">Step right up!</h1>
+      <div class="inner">
+    <label for="game">Choose a game!</label>
     <select id="game">
       <option value="Achievement%20Unlocked%201.swf">Achievement Unlocked</option>
       <option value="Achievement%20Unlocked%202.swf">Achievement Unlocked 2</option>
@@ -25,6 +28,8 @@
       <option value="level3.swf">This Is The Only Level 3</option>
     </select>
     <button id="play">Play!</button>
+      </div>
+    </div>
     <script>
 play.onclick = (event) => {
   window.top.location = "./game.html?game=" + game.value;
