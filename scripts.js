@@ -23,6 +23,9 @@ for (let i=pjs.length; i > -1; i--) {
 setInterval(ok, pjs.length()*1000);
 var swfobject = {};
 
+function embedTheStupidSWF(game) {
+  document.getElementById("gamecont").innerhtml = "<iframe src=\"" + "./game.html?game=" + game + "\" width=\"800\" height=\"600\"></iframe>";
+}
 
 var play = document.querySelector('#play');
 var game = document.querySelector('#game');
