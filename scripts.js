@@ -26,5 +26,4 @@ var swfobject = {};
 
 var play = document.querySelector('#play');
 var game = document.querySelector('#game');
-}
 ok();
