@@ -46,9 +46,29 @@
     </div>
     <div id="gamecont">
     </div>
+    <img src="https://fontmeme.com/permalink/240117/25908b4cba04ec232aa2e6dde7f1be3d.png">
+    <div class="window">
+      <div class="title-bar">
+        <button aria-label="Close" class="close"></button>
+      <h1 class="title" style="color:black;">For the modern day...</h1>
+        <button aria-label="Resize" disabled class="hidden">
+      </div>
+        <div class="separator">
+          </div>
+      <div class="window-pane">
+    <label for="game2">Choose a game!</label>
+    <select id="game2">
+      <option value="https://bonk.io/gameframe-release.html">Bonk.io 2</option>
+    </select>
+    <button id="play2" class="btn">Play!</button>
+        </div>
+    </div>
     <script>
 document.getElementById('play').onclick = (event) => {
   window.top.location = "./game.html?game=" + document.getElementById('game').value;
+};
+document.getElementById('play2').onclick = (event) => {
+  window.top.location = "./game2.html?game=" + document.getElementById('game2').value;
 };</script>
     </body>
 
