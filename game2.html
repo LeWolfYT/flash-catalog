@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="Flash">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+  <title>Game</title>
+  <noscript>Your browser doesn't have JavaScript enabled. Please enable JavaScript or switch to a browser that
+    supports it.</noscript>
+  <style>
+    html body div {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+<div id="gamecont"></div>
+<script>
+const gameLink = (new URLSearchParams(window.location.search)).get("game");
+const gameFrame = document.createElement("iframe");
+gameFrame.src = gameLink;
+document.getElementById("gamecont").appendChild(gameFrame);
+</script>
+</body>
+</html>
