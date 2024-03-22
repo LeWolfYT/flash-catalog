@@ -52,15 +52,15 @@ function fixWindow() {
 }
 window.onresize = fixWindow;
 document.getElementById("plbtn").onclick = function(){playe.play();};
-  //document.getElementById("psbtn").onclick = function(){ruff.pause();};
-  //document.getElementById("rlbtn".onclick = function(){ruff.reload();};
-  //document.getElementById("dlbtn").onclick = function(){ruff.downloadSwf();});
-  //document.getElementById("scbtn").onclick = function(){
-    //let meta = ruff.metadata;
-    //playe.width = meta.width;
-    //playe.height = meta.height;
-    //playe.style = "width: " + meta.width + "px; height: " + meta.height + "px;"
-  //};
+  document.getElementById("psbtn").onclick = function(){playe.pause();};
+  document.getElementById("rlbtn".onclick = function(){playe.reload();};
+  document.getElementById("dlbtn").onclick = function(){playe.downloadSwf();});
+  document.getElementById("scbtn").onclick = function(){
+    let meta = ruff.metadata;
+    playe.width = meta.width;
+    playe.height = meta.height;
+    playe.style = "width: " + meta.width + "px; height: " + meta.height + "px;"
+  };
 </script>
 </body>
 </html>
