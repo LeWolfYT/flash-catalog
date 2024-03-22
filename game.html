@@ -12,7 +12,7 @@
 
 swfobject.embedSWF = function(url, cont, width, height){
     var ruffle = window.RufflePlayer.newest(),
-        player = Object.assign(document.getElementById("cont").appendChild(ruffle.createPlayer()), {
+        player = Object.assign(document.getElementById(cont).appendChild(ruffle.createPlayer()), {
             width: width,
             height: height,
             style: 'width: ' + width + 'px; height: ' + height + 'px;',
@@ -44,22 +44,22 @@ swfobject.embedSWF = function(url, cont, width, height){
   <button id="scbtn">Set to native scale</button>
 <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 <script id = "gabe">
-var ruffle, player = swfobject.embedSWF("./games/"+(new URLSearchParams(window.location.search)).get("game"), 'ruffle', document.getElementsByTagName("HTML")[0].clientWidth, document.getElementsByTagName("HTML")[0].clientHeight);
+var ruff, playe = swfobject.embedSWF("./games/"+(new URLSearchParams(window.location.search)).get("game"), 'ruffle', document.getElementsByTagName("HTML")[0].clientWidth, document.getElementsByTagName("HTML")[0].clientHeight);
 function fixWindow() {
-  player.width = document.getElementsByTagName("HTML")[0].clientWidth;
-  player.height = document.getElementsByTagName("HTML")[0].clientHeight;
-  player.style = "width: " + document.getElementsByTagName("HTML")[0].clientWidth + "px; height: " + document.getElementsByTagName("HTML")[0].clientHeight + "px;";
+  playe.width = document.getElementsByTagName("HTML")[0].clientWidth;
+  playe.height = document.getElementsByTagName("HTML")[0].clientHeight;
+  playe.style = "width: " + document.getElementsByTagName("HTML")[0].clientWidth + "px; height: " + document.getElementsByTagName("HTML")[0].clientHeight + "px;";
 }
 window.onresize = fixWindow;
-document.getElementById("plbtn").addEventListener("click", () => {ruffle.play();})
-  document.getElementById("psbtn").addEventListener("click", () => {ruffle.pause();})
-  document.getElementById("rlbtn".addEventListener("click", () => {ruffle.reload();})
-  document.getElementById("dlbtn").addEventListener("click", () => {ruffle.downloadSwf();})
+document.getElementById("plbtn").addEventListener("click", () => {ruff.play();})
+  document.getElementById("psbtn").addEventListener("click", () => {ruff.pause();})
+  document.getElementById("rlbtn".addEventListener("click", () => {ruff.reload();})
+  document.getElementById("dlbtn").addEventListener("click", () => {ruff.downloadSwf();})
   document.getElementById("scbtn").addEventListener("click", () => {
-    let meta = ruffle.metadata;
-    player.width = meta.width;
-    player.height = meta.height;
-    player.style = "width: " + meta.width + "px; height: " + meta.height + "px;"
+    let meta = ruff.metadata;
+    playe.width = meta.width;
+    playe.height = meta.height;
+    playe.style = "width: " + meta.width + "px; height: " + meta.height + "px;"
   })
 </script>
 </body>
