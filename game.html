@@ -51,16 +51,16 @@ function fixWindow() {
   playe.style = "width: " + document.getElementsByTagName("HTML")[0].clientWidth + "px; height: " + document.getElementsByTagName("HTML")[0].clientHeight + "px;";
 }
 window.onresize = fixWindow;
-document.getElementById("plbtn").addEventListener("click", () => {ruff.play();})
-  document.getElementById("psbtn").addEventListener("click", () => {ruff.pause();})
-  document.getElementById("rlbtn".addEventListener("click", () => {ruff.reload();})
-  document.getElementById("dlbtn").addEventListener("click", () => {ruff.downloadSwf();})
-  document.getElementById("scbtn").addEventListener("click", () => {
-    let meta = ruff.metadata;
-    playe.width = meta.width;
-    playe.height = meta.height;
-    playe.style = "width: " + meta.width + "px; height: " + meta.height + "px;"
-  })
+//document.getElementById("plbtn").addEventListener("click", () => {ruff.play();})
+  //document.getElementById("psbtn").addEventListener("click", () => {ruff.pause();})
+  //document.getElementById("rlbtn".addEventListener("click", () => {ruff.reload();})
+  //document.getElementById("dlbtn").addEventListener("click", () => {ruff.downloadSwf();})
+  //document.getElementById("scbtn").addEventListener("click", () => {
+    //let meta = ruff.metadata;
+    //playe.width = meta.width;
+    //playe.height = meta.height;
+    //playe.style = "width: " + meta.width + "px; height: " + meta.height + "px;"
+  //})
 </script>
 </body>
 </html>
