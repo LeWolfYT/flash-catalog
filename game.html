@@ -36,6 +36,13 @@ swfobject.embedSWF = function(url, cont, width, height){
 <body id="egggy">
 <div id='ruffle' class="gameloc"></div>
 <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-<script id = "gabe">swfobject.embedSWF("./games/"+(new URLSearchParams(window.location.search)).get("game"), 'ruffle', document.getElementsByTagName("HTML")[0].clientWidth, document.getElementsByTagName("HTML")[0].clientHeight);</script>
+<script id = "gabe">swfobject.embedSWF("./games/"+(new URLSearchParams(window.location.search)).get("game"), 'ruffle', document.getElementsByTagName("HTML")[0].clientWidth, document.getElementsByTagName("HTML")[0].clientHeight);
+function fixWindow() {
+  player.width = document.getElementsByTagName("HTML")[0].clientWidth;
+  player.height = document.getElementsByTagName("HTML")[0].clientHeight;
+  player.style = "width: " + document.getElementsByTagName("HTML")[0].clientWidth + "px; height: " + document.getElementsByTagName("HTML")[0].clientHeight + "px;";
+}
+window.onresize = fixWindow;
+</script>
 </body>
 </html>
