@@ -36,6 +36,6 @@ swfobject.embedSWF = function(url, cont, width, height){
 <body id="egggy">
 <div id='ruffle' class="gameloc"></div>
 <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-<script id = "gabe">swfobject.embedSWF("./games/"+(new URLSearchParams(window.location.search)).get("game"), 'ruffle', document.html.clientWidth, document.html.clientHeight);</script>
+<script id = "gabe">swfobject.embedSWF("./games/"+(new URLSearchParams(window.location.search)).get("game"), 'ruffle', document.html.getBoundingClientRect().width, document.html.getBoundingClientRect().height);</script>
 </body>
 </html>
