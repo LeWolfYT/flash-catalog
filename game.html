@@ -32,11 +32,17 @@ swfobject.embedSWF = function(url, cont, width, height){
       width: 100%;
       height: 100%;
     }
+    #conbut {
+      position: absolute;
+      top: 0.5em;
+      left: 0.5em
+    }
   </style>
 </head>
 <body id="egggy">
+  <button id="conbut">Down to controls</button>
 <div id='ruffle' class="gameloc"></div>
-  <p>Experimental controls</p>
+  <p id="contrls">Controls</p>
 <button id="plbtn">Play (if a game isn't loading, try pressing this!)</button>
   <button id="psbtn">Pause</button>
   <button id="rlbtn">Reload</button>
@@ -61,6 +67,7 @@ document.getElementById("plbtn").onclick = function(){playe.play();};
     playe.height = meta.height;
     playe.style = "width: " + meta.width + "px; height: " + meta.height + "px;"
   };
+  document.getElementById("conbut").onclick = function(){window.scroll({top: 1000, left: 0, behavior: "smooth"})};
 </script>
 </body>
 </html>
