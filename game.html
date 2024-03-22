@@ -12,10 +12,10 @@
 
 swfobject.embedSWF = function(url, cont, width, height){
     var ruffle = window.RufflePlayer.newest(),
-        player = Object.assign(document.getElementById(cont).appendChild(ruffle.createPlayer()), {
+        player = Object.assign(document.getElementById("cont").appendChild(ruffle.createPlayer()), {
             width: width,
             height: height,
-            style: 'width: ' + width + 'px; height: ' + height + 'px',
+            style: 'width: ' + width + 'px; height: ' + height + 'px;',
         });
 
     player.load({ url: url });
@@ -35,14 +35,31 @@ swfobject.embedSWF = function(url, cont, width, height){
 </head>
 <body id="egggy">
 <div id='ruffle' class="gameloc"></div>
+  <p>Experimental controls</p>
+<button id="plbtn">Play (if a game isn't loading, try pressing this!)</button>
+  <button id="psbtn">Pause</button>
+  <button id="rlbtn">Reload</button>
+  <button id="dlbtn">Download this game</button>
+  <button id="scbtn">Set to native scale</button>
 <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
-<script id = "gabe">swfobject.embedSWF("./games/"+(new URLSearchParams(window.location.search)).get("game"), 'ruffle', document.getElementsByTagName("HTML")[0].clientWidth, document.getElementsByTagName("HTML")[0].clientHeight);
+<script id = "gabe">
+swfobject.embedSWF("./games/"+(new URLSearchParams(window.location.search)).get("game"), 'ruffle', document.getElementsByTagName("HTML")[0].clientWidth, document.getElementsByTagName("HTML")[0].clientHeight);
 function fixWindow() {
   player.width = document.getElementsByTagName("HTML")[0].clientWidth;
   player.height = document.getElementsByTagName("HTML")[0].clientHeight;
   player.style = "width: " + document.getElementsByTagName("HTML")[0].clientWidth + "px; height: " + document.getElementsByTagName("HTML")[0].clientHeight + "px;";
 }
 window.onresize = fixWindow;
+document.getElementById("plbtn").addEventListener("click", () => {ruffle.play();})
+  document.getElementById("psbtn").addEventListener("click", () => {ruffle.pause();})
+  document.getElementById("rlbtn".addEventListener("click", () => {ruffle.reload();})
+  document.getElementById("dlbtn").addEventListener("click", () => {ruffle.downloadSwf();})
+  document.getElementById("scbtn").addEventListener("click", () => {
+    let meta = ruffle.metadata;
+    player.width = meta.width;
+    player.height = meta.height;
+    player.style = "width: " + meta.width + "px; height: " + meta.height + "px;"
+  })
 </script>
 </body>
 </html>
