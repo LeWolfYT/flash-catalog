@@ -58,7 +58,7 @@ swfobject.embedSWF = function(url, cont, width, height){
 var ruff, playe = swfobject.embedSWF("./games/"+(new URLSearchParams(window.location.search)).get("game"), 'ruffle', document.getElementsByTagName("HTML")[0].clientWidth, document.getElementsByTagName("HTML")[0].clientHeight);
 var fulls = false;
   function fixWindow() {
-    if (fulls) {
+    if (fulls==true) {
   playe.width = document.getElementsByTagName("HTML")[0].clientWidth;
   playe.height = document.getElementsByTagName("HTML")[0].clientHeight;
   playe.style = "width: " + document.getElementsByTagName("HTML")[0].clientWidth + "px; height: " + document.getElementsByTagName("HTML")[0].clientHeight + "px;";
