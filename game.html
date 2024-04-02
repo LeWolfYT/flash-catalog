@@ -77,17 +77,6 @@ document.getElementById("plbtn").onclick = function(){playe.play();};
   document.getElementById("fsbtn").onclick = function(){fixWindow();};
   document.getElementById("conbut").onclick = function(){window.scroll({top: 1000, left: 0, behavior: "smooth"})};
 
-  function spaghettti() {
-    if (playe.readyState == 0) {
-      setInterval(spaghettti, 50);
-      return;
-    }
-    let meta = playe.metadata;
-    playe.width = meta.width;
-    playe.height = meta.height;
-    playe.style = "width: " + meta.width + "px; height: " + meta.height + "px;
-  }
-  spaghettti();
 </script>
 </body>
 </html>
