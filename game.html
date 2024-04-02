@@ -55,14 +55,13 @@ swfobject.embedSWF = function(url, cont, width, height){
   <button id="fsbtn">Set to window size</button>
 <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 <script id = "gabe">
-var ruff, playe = swfobject.embedSWF("./games/"+(new URLSearchParams(window.location.search)).get("game"), 'ruffle', document.getElementsByTagName("HTML")[0].clientWidth, document.getElementsByTagName("HTML")[0].clientHeight);
+var ruff, playe = swfobject.embedSWF("./games/"+(new URLSearchParams(window.location.search)).get("game"), 'ruffle', document.getElementsByTagName("HTML")[0].clientWidth, document.getElementsByTagName("HTML")[0].clientHeight-24);
 var fulls = false;
   function fixWindow() {
-    if (fulls==true) {
   playe.width = document.getElementsByTagName("HTML")[0].clientWidth;
   playe.height = document.getElementsByTagName("HTML")[0].clientHeight;
   playe.style = "width: " + document.getElementsByTagName("HTML")[0].clientWidth + "px; height: " + document.getElementsByTagName("HTML")[0].clientHeight + "px;";
-}}
+}
 window.onresize = fixWindow;
 document.getElementById("plbtn").onclick = function(){playe.play();};
   document.getElementById("psbtn").onclick = function(){playe.pause();};
@@ -75,7 +74,7 @@ document.getElementById("plbtn").onclick = function(){playe.play();};
     playe.style = "width: " + meta.width + "px; height: " + meta.height + "px;"
     fulls = false;
   };
-  document.getElementById("fsbtn").onclick = function(){fulls = true; fixWindow();};
+  document.getElementById("fsbtn").onclick = function(){fixWindow();};
   document.getElementById("conbut").onclick = function(){window.scroll({top: 1000, left: 0, behavior: "smooth"})};
 
   function spaghettti() {
