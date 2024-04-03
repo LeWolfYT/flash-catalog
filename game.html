@@ -75,6 +75,26 @@ var fulls = false;
   playe.height = document.getElementsByTagName("HTML")[0].clientHeight;
   playe.style = "width: " + document.getElementsByTagName("HTML")[0].clientWidth + "px; height: " + document.getElementsByTagName("HTML")[0].clientHeight + "px;";
 }}
+
+let wated;
+function watier() {
+  if playe.readyState == 0 {
+    if not wated {
+    setInterval(watier, 50);
+    }
+    return
+  } else {
+    if wated {
+      clearInterval(wated);
+      wated = null;
+    }
+let meta = playe.metadata;
+    playe.width = meta.width;
+    playe.height = meta.height;
+    playe.style = "width: " + meta.width + "px; height: " + meta.height + "px;"
+    fulls = false;
+  } 
+}
 window.onresize = fixWindow;
 document.getElementById("plbtn").onclick = function(){playe.play();};
   document.getElementById("psbtn").onclick = function(){playe.pause();};
@@ -89,7 +109,7 @@ document.getElementById("plbtn").onclick = function(){playe.play();};
   };
   document.getElementById("fsbtn").onclick = function(){fulls = true;fixWindow();};
   document.getElementById("conbut").onclick = function(){window.scroll({top: 1000, left: 0, behavior: "smooth"})};
-
+watier();
 </script>
 </body>
 </html>
