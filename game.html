@@ -67,13 +67,13 @@ hs.src = ('//s10.histats.com/js15_as.js');
 <!-- Histats.com  END  -->
 <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
 <script id = "gabe">
-var ruff, playe = swfobject.embedSWF("./games/"+(new URLSearchParams(window.location.search)).get("game"), 'ruffle', document.getElementsByTagName("HTML")[0].clientWidth, document.getElementsByTagName("HTML")[0].clientHeight-24);
+var ruff, playe = swfobject.embedSWF("./games/"+(new URLSearchParams(window.location.search)).get("game"), 'ruffle', 800, 600);
 var fulls = false;
   function fixWindow() {
     if (fulls) {
-  playe.width = 800;
-  playe.height = 600;
-  playe.style = "width: " + 800 + "px; height: " + 600 + "px;";
+  playe.width = document.getElementsByTagName("HTML")[0].clientWidth;
+  playe.height = document.getElementsByTagName("HTML")[0].clientHeight;
+  playe.style = "width: " + document.getElementsByTagName("HTML")[0].clientWidth + "px; height: " + document.getElementsByTagName("HTML")[0].clientHeight + "px;";
 }}
 
 window.onresize = fixWindow;
