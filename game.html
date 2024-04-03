@@ -18,6 +18,40 @@ swfobject.embedSWF = function(url, cont, width, height){
             style: 'width: ' + width + 'px; height: ' + height + 'px;',
         });
 
+    window.RufflePlayer.config = {
+    "publicPath": undefined,
+    "polyfills": true,
+    "allowScriptAccess": false,
+    "autoplay": "true",
+    "unmuteOverlay": "visible",
+    "backgroundColor": null,
+    "wmode": "transparent",
+    "letterbox": "off",
+    "warnOnUnsupportedContent": true,
+    "contextMenu": "on",
+    "showSwfDownload": false,
+    "upgradeToHttps": window.location.protocol === "https:",
+    "maxExecutionDuration": 15,
+    "logLevel": "error",
+    "base": null,
+    "menu": true,
+    "salign": "",
+    "forceAlign": false,
+    "scale": "showAll",
+    "forceScale": false,
+    "frameRate": null,
+    "quality": "high",
+    "splashScreen": true,
+    "preferredRenderer": null,
+    "openUrlMode": "allow",
+    "allowNetworking": "all",
+    "favorFlash": true,
+    "socketProxy": [],
+    "fontSources": [],
+    "defaultFonts": {},
+    "credentialAllowList": [],
+    "playerRuntime": "flashPlayer",
+};
     player.load({ url: url });
   return ruffle, player
 }</script>
@@ -75,6 +109,14 @@ var fulls = false;
   playe.height = document.getElementsByTagName("HTML")[0].clientHeight;
   playe.style = "width: " + document.getElementsByTagName("HTML")[0].clientWidth + "px; height: " + document.getElementsByTagName("HTML")[0].clientHeight + "px;";
 }}
+
+playe.addEventListener('loadedmetadata', () => {
+  let meta = playe.metadata;
+    playe.width = meta.width;
+    playe.height = meta.height;
+    playe.style = "width: " + meta.width + "px; height: " + meta.height + "px;"
+    fulls = false;
+});
 
 window.onresize = fixWindow;
 document.getElementById("plbtn").onclick = function(){playe.play();};
