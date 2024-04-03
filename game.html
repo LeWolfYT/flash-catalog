@@ -71,30 +71,11 @@ var ruff, playe = swfobject.embedSWF("./games/"+(new URLSearchParams(window.loca
 var fulls = false;
   function fixWindow() {
     if (fulls) {
-  playe.width = document.getElementsByTagName("HTML")[0].clientWidth;
-  playe.height = document.getElementsByTagName("HTML")[0].clientHeight;
-  playe.style = "width: " + document.getElementsByTagName("HTML")[0].clientWidth + "px; height: " + document.getElementsByTagName("HTML")[0].clientHeight + "px;";
+  playe.width = 800;
+  playe.height = 600;
+  playe.style = "width: " + 800 + "px; height: " + 600 + "px;";
 }}
 
-let wated;
-function watier() {
-  if playe.readyState == 0 {
-    if not wated {
-    setInterval(watier, 50);
-    }
-    return
-  } else {
-    if wated {
-      clearInterval(wated);
-      wated = null;
-    }
-let meta = playe.metadata;
-    playe.width = meta.width;
-    playe.height = meta.height;
-    playe.style = "width: " + meta.width + "px; height: " + meta.height + "px;"
-    fulls = false;
-  } 
-}
 window.onresize = fixWindow;
 document.getElementById("plbtn").onclick = function(){playe.play();};
   document.getElementById("psbtn").onclick = function(){playe.pause();};
@@ -109,7 +90,7 @@ document.getElementById("plbtn").onclick = function(){playe.play();};
   };
   document.getElementById("fsbtn").onclick = function(){fulls = true;fixWindow();};
   document.getElementById("conbut").onclick = function(){window.scroll({top: 1000, left: 0, behavior: "smooth"})};
-watier();
+
 </script>
 </body>
 </html>
