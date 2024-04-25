@@ -6,7 +6,6 @@ document.title = "\u200E";
 var pjs = "Flash games!"
 
 async function ok() {
-var pjs = "PJ\'S ROOM!"
 var tx = ""
 for (let i=0; i < pjs.length; i++) {
   tx += pjs[i]
@@ -26,5 +25,5 @@ for (let i=pjs.length; i > -1; i--) {
 var play = document.querySelector('#play');
 var game = document.querySelector('#game');
 
-setInterval(ok, pjs.length()*1000);
+setInterval(ok, 12000);
 ok();
