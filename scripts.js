@@ -7,6 +7,7 @@ var pjs = "Flash games!"
 
 async function ok() {
 var tx = ""
+var pjs = "Flash games!"
 for (let i=0; i < pjs.length; i++) {
   tx += pjs[i]
   await sleep(250);
